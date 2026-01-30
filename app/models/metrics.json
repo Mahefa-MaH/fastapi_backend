@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.9757847533632287,
+  "labels_order_for_cm": [
+    "ham",
+    "spam"
+  ],
+  "confusion_matrix": [
+    [
+      966,
+      0
+    ],
+    [
+      27,
+      122
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n         ham     0.9728    1.0000    0.9862       966\n        spam     1.0000    0.8188    0.9004       149\n\n    accuracy                         0.9758      1115\n   macro avg     0.9864    0.9094    0.9433      1115\nweighted avg     0.9764    0.9758    0.9747      1115\n"
+}
