@@ -1,6 +1,3 @@
-"""
-Service NLP : gestion du chargement et de l'inférence du modèle
-"""
 import json
 import joblib
 from pathlib import Path
@@ -22,13 +19,6 @@ class NLPService:
         self.metrics_path = Path(__file__).parent.parent / "models" / "metrics.json"
     
     def load_model(self) -> None:
-        """
-        Charge le modèle joblib et les métriques au démarrage
-        
-        Raises:
-            FileNotFoundError: Si le modèle ou les métriques sont introuvables
-            Exception: Si le chargement échoue
-        """
         try:
             # Vérification de l'existence des fichiers
             if not self.model_path.exists():
@@ -69,24 +59,7 @@ class NLPService:
             raise
     
     def predict(self, text: str) -> Dict[str, any]:
-        """
-        Effectue une prédiction sur un texte donné
-        
-        Args:
-            text: Le texte à classifier
-            
-        Returns:
-            Dict contenant:
-                - label: "spam" ou "ham"
-                - accuracy: précision du modèle
-                - probabilities: dict avec proba spam/ham
-                - confidence: probabilité de la classe prédite
-                - raw_prediction: prédiction brute du modèle
-                
-        Raises:
-            ValueError: Si le texte est vide ou le modèle non chargé
-        """
-        # Validation
+     
         if not text or not text.strip():
             raise ValueError("Le texte ne peut pas être vide")
         

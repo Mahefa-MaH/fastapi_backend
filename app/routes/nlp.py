@@ -1,6 +1,3 @@
-"""
-Routes NLP : endpoints pour la prédiction spam/ham
-"""
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 from typing import Dict, Optional
